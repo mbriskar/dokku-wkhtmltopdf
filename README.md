@@ -1,13 +1,13 @@
 # dokku-wkhtmltopdf
 
-dokku-wkhtmltopdf is a plugin for [dokku][dokku] that properly installs the wkhtmltopdf into the docker instance.
-This plugin should fix the problems you may have when downloading wkhtmltopdf using another awesome plugin [dokku-apt][dokku-apt].
+dokku-wkhtmltopdf is an awesome plugin for [dokku][dokku] that properly installs the wkhtmltopdf into the docker instance.
+This plugin should fix the problems you may have when downloading wkhtmltopdf with ```apt-get``` for example by using another awesome plugin [dokku-apt][dokku-apt].
 
 ## Installation
 
 On your dokku server:
 ```sh
-https://github.com/mbriskar/dokku-wkhtmltopdf /var/lib/dokku/plugins/dokku-wkhtmltopdf
+git clone https://github.com/mbriskar/dokku-wkhtmltopdf /var/lib/dokku/plugins/dokku-wkhtmltopdf
 ```
 
 All future deployments will have dokku-wkhtmltopdf installed.

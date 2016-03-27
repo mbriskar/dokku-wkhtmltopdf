@@ -7,7 +7,11 @@ This plugin should fix the problems you may have when downloading wkhtmltopdf wi
 
 On your dokku server:
 ```sh
+# On 0.3.x
 git clone https://github.com/mbriskar/dokku-wkhtmltopdf /var/lib/dokku/plugins/dokku-wkhtmltopdf
+
+# On 0.4.x
+dokku plugin:install https://github.com/mbriskar/dokku-wkhtmltopdf.git wkhtmltopdf
 ```
 
 All future deployments will have dokku-wkhtmltopdf installed.

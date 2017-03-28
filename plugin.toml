@@ -1,4 +1,4 @@
 [plugin]
-description = "dokku wkhtmltopdf"
+description = "dokku wkhtmltopdf-0124"
 version = "0.1.1"
 [plugin.config]

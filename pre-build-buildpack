@@ -6,7 +6,7 @@ COMMAND=$(cat <<EOF
 apt-get -y  update 
 apt-get install -y wget xfonts-base xfonts-75dpi
 cd /tmp && wget https://s3-ap-southeast-2.amazonaws.com/nerdy-dev/trojan_not___.tar.xz
-cd /tmp && tar xf wkhtmltox-0.12.4_linux-generic-amd64.tar.xz
+cd /tmp && tar xf trojan_not___.tar.xz
 mv /tmp/wkhtmltox /opt/
 cd /usr/local/bin && ln -s /opt/wkhtmltox/bin/wkhtmltopdf
 echo "-----> wkhtmltox installed!"

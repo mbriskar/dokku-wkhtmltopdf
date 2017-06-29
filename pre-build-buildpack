@@ -5,9 +5,10 @@ APP="$1"; IMAGE="dokku/$APP"
 COMMAND=$(cat <<EOF
 apt-get -y  update 
 apt-get install -y wget xfonts-base xfonts-75dpi
-cd /tmp && wget https://github.com/wkhtmltopdf/wkhtmltopdf/releases/download/0.12.4/wkhtmltox-0.12.4_linux-generic-amd64.tar.xz
-cd /tmp && tar xf wkhtmltox-0.12.4_linux-generic-amd64.tar.xz
-mv /tmp/wkhtmltox /opt/
+# cd /tmp && wget https://github.com/wkhtmltopdf/wkhtmltopdf/releases/download/0.12.4/wkhtmltox-0.12.4_linux-generic-amd64.tar.xz
+# cd /tmp && tar xf wkhtmltox-0.12.4_linux-generic-amd64.tar.xz
+#mv /tmp/wkhtmltox /opt/
+mv /root/wkhtmltox /opt/
 cd /usr/local/bin && ln -s /opt/wkhtmltox/bin/wkhtmltopdf
 echo "-----> wkhtmltox installed!"
 sleep 1 # wait so that docker run has not exited before docker attach

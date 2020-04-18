@@ -14,14 +14,14 @@ sleep 1 # wait so that docker run has not exited before docker attach
 EOF
 )
 
-if [ "$INSTALL_WKHTMLTOX" = "false" ]
+if [ "$INSTALL_WKHTMLTOX" = "true" ]
 then
-  echo "-----> skipping wkhtmltox install..."
-else
   echo "-----> Installing wkhtmltox ..."
   id=$(docker run -d $IMAGE /bin/bash -e -c "$COMMAND")
   #enable logs
   docker attach $id
   test $(docker wait $id) -eq 0
   docker commit $id $IMAGE > /dev/null
+else
+  echo "-----> skipping wkhtmltox install..."
 fi

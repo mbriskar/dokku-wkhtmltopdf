@@ -5,11 +5,9 @@ APP="$1"; IMAGE="dokku/$APP"
 echo "-----> Installing wkhtmltox ..."
 COMMAND=$(cat <<EOF
 apt-get -y  update 
-apt-get install -y wget xfonts-base xfonts-75dpi libssl1.0-dev openssl
-cd /tmp && wget https://downloads.wkhtmltopdf.org/0.12/0.12.4/wkhtmltox-0.12.4_linux-generic-amd64.tar.xz
-cd /tmp && tar xf wkhtmltox-0.12.4_linux-generic-amd64.tar.xz
-mv /tmp/wkhtmltox /opt/
-cd /usr/local/bin && ln -s /opt/wkhtmltox/bin/wkhtmltopdf && ln -s /opt/wkhtmltox/bin/wkhtmltoimage
+apt-get install -y wget xfonts-base xfonts-75dpi libssl1.0 openssl
+cd /tmp && wget https://github.com/wkhtmltopdf/packaging/releases/download/0.12.6-1/wkhtmltox_0.12.6-1.focal_amd64.deb
+cd /tmp && apt install ./wkhtmltox_0.12.6-1.focal_amd64.deb
 echo "-----> wkhtmltox installed!"
 sleep 1 # wait so that docker run has not exited before docker attach
 EOF
